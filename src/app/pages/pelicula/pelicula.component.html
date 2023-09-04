@@ -1,0 +1,46 @@
+<!-- 
+<div class="container" *ngIf="movieDetails">
+    <h1>{{movieDetails.title}} </h1>
+    <img src="movie.poster_path | poster" alt="movie.title">
+    
+</div> -->
+
+<div class="row ranking animate__animated animate__fadeIn animate__faster " *ngIf="movieDetails">
+    <div class="col-md-6 mt-2">
+        <img [src]="movieDetails.poster_path | poster" [alt]="movieDetails.title" class="img-thumbnail">
+    </div>
+    <div class="col-md-6 mt-2">
+        <h3>{{movieDetails.title}}</h3>
+        <div class="row mt-2">
+            <div class="col">
+                <start-rating [stars]=" (movieDetails.vote_average/2)" />
+            </div>
+            <div class="col ">
+                {{movieDetails.vote_average/2 | number : "1.1-1" }}
+            </div>
+            <div class="row mt-3 ">
+                <div class="col">
+                    {{movieDetails.overview}}
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <button class="btn btn-outline-info"
+                            (click)="RegresarBusqueda()">
+                        Regresar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5" *ngIf="cast.length > 0">
+    <div class="col">
+        <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+</div>
+
+<div class="row mt-5" >
+   
+</div>

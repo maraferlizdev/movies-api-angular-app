@@ -1,0 +1,27 @@
+<div class="row movies-container">
+  <div class="col-md-3 mb-5 animate__animated animate__fadeIn " *ngFor="let movie of movies">
+    <img
+      [src]="movie.poster_path | poster"
+      class="img-fluid poster"
+      (click)="onMovieClick (movie)"
+    />
+    
+    <div>
+      
+      <div class="row ranking">
+        <h3>{{ movie.title }}</h3>
+        <div class="col-10 stars">
+          <start-rating [stars]=" (movie.vote_average/2)" />
+        </div>
+        <div class="col-2">
+          {{ movie.vote_average/2 | number : "1.1-1" }}
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
