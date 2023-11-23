@@ -5,15 +5,14 @@ import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 
 const routes: Routes = [
-  {path:'home', component: HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'pelicula/:id', component: PeliculaComponent},
   {path:'buscar/:texto', component: BuscarComponent},
-  {path: '', pathMatch:'full', redirectTo: 'home' },
-  {path: '**', redirectTo: 'home'}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
