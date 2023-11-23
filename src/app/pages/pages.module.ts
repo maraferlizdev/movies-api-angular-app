@@ -18,6 +18,11 @@ import { PipesModule } from '../pipes/pipes.module';
     PeliculaComponent,
     BuscarComponent,
     PeliculaPosterGridComponent
+  ],exports: [
+    HomeComponent,
+    PeliculaComponent,
+    BuscarComponent,
+    PeliculaPosterGridComponent
   ],
   imports: [
     CommonModule,
