@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   constructor(private peliculaService:PeliculasService) {  
   }
   ngOnInit(): void {
-    console.log('HomeComponent cargado con éxito!');
+    console.log('HomeComponent Cargado con éxito!');
     this.peliculaService.getCartelera().subscribe
     (mov => {
        console.log(mov.results)
