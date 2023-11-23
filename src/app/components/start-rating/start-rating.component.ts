@@ -38,7 +38,7 @@ export class StartRatingComponent {
     :this.stars < previousHalf && this.stars > previousHalf - 0.5
     ?'star-half-half'
     : 'star-empty';
-    return `/assets/stars/${imageName}.png`;
+    return `assets/stars/${imageName}.png`;
     
     // const previousHalf = current - 0.5;
     // const imageName =
